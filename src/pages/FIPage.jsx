@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import LogCard from "../components/LogCard";
 
-export default function LogsPage() {
+export default function FIPage() {
     const [logs, setLogs] = useState([]);
     const [loading, setLoading] = useState(true);
 
