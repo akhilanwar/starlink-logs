@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import LogCard from "../components/LogCard";
 import JsonViewer from "../components/JsonViewer";
+import EventCard from "../components/EventCard";
 
 const ApplicationsPage = () => {
     const [autovertId, setAutovertId] = useState("");
@@ -118,9 +119,11 @@ const ApplicationsPage = () => {
             {/* Events */}
             {events.length > 0 && (
                 <div id="events-section" className="mb-6">
-                    <h2 className="text-xl font-semibold mb-2 text-gray-800">Web Hook Events</h2>
+                    <h2 className="text-xl font-semibold mb-2 text-gray-800">
+                        Webhook Events
+                    </h2>
                     {events.map((event) => (
-                        <JsonViewer key={event._id} title={`Event: ${event.source}`} data={event} />
+                        <EventCard key={event._id} event={event} />
                     ))}
                 </div>
             )}
